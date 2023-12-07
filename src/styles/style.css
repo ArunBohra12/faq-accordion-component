@@ -76,15 +76,15 @@ body {
   cursor: pointer;
 }
 
-.question p {
+.question-text {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--dark-purple);
   transition: color 0.3s;
 }
 
-.question p:hover,
-.question:focus-visible p {
+.question-text:hover,
+.question:focus-visible .question-text {
   color: var(--pink);
 }
 
@@ -176,7 +176,7 @@ body {
     gap: 5px;
   }
 
-  .question p {
+  .question-text {
     font-size: 1.6rem;
   }
 
