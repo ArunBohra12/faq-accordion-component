@@ -60,9 +60,18 @@ describe('Accordion behavior', () => {
 
   it('Should toggle aria controls', () => {
     const question = questionsMockData[0];
-    // This function tests
+    // This function uses aria-expanded to test visibility
     toggleAccordion(questionButtons[0]);
 
     expect(isAccordionOpen(questionButtons[0])).toBe(!question.isExpanded);
+  });
+
+  it('Should toggle the tabindex for the answer on toggling question', () => {
+    const question = questionsMockData[0];
+
+    toggleAccordion(questionButtons[0]);
+    const answer = document.querySelector(`#${questionButtons[0].getAttribute('aria-controls')}`);
+
+    expect(answer?.getAttribute('tabindex')).toBe(question.isExpanded ? '-1' : '0');
   });
 });
