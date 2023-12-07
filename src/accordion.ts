@@ -11,10 +11,12 @@ export const toggleAccordion = (questionButton: Question) => {
     questionButton.setAttribute('aria-expanded', 'true');
     questionButton.dataset.expanded = 'true';
     answer?.classList.remove('hidden');
+    answer?.setAttribute('tabindex', '0');
     return;
   }
 
   questionButton.setAttribute('aria-expanded', 'false');
   questionButton.dataset.expanded = 'false';
   answer?.classList.add('hidden');
+  answer?.setAttribute('tabindex', '-1');
 };
